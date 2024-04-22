@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap"
 function Form() {
     return (
         <div id="form">
-            <form id="formTask" class ="container my-4" />
+            <form id="formTask" class="container my-4" />
             <h2 class="text-center my-4">MY SCHEDULE</h2>
             <div class="row justify-content-around">
                 <div class="col-md-5 bg-light">
