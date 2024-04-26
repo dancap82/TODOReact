@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-function Form() {
+function Form({ToDo, setToDo}) {
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [date, setDate] = useState(''); 
     const [time, setTime] = useState(''); 
-    const [ToDo, setToDo] = useState([]);  
+     
 
     const handleTitleChange = (event) => {
         setTitle(event.target.value);
