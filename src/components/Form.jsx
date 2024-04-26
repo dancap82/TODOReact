@@ -6,6 +6,7 @@ function Form() {
     const [description, setDescription] = useState('');
     const [date, setDate] = useState(''); 
     const [time, setTime] = useState(''); 
+    const [ToDo, setToDo] = useState([]);  
 
     const handleTitleChange = (event) => {
         setTitle(event.target.value);
@@ -31,9 +32,24 @@ function Form() {
         console.log('Date:', date);
         console.log('Time:', time);
         // Here you can perform actions like submitting the form or sending data to a server
+        const newToDo = {
+            id: Date.now(), // Generate a unique ID (for simplicity, using timestamp)
+            title: title,
+            description: description,
+            date: date,
+            time: time
+        };
+        setToDo(prevToDo => [...prevToDo, newToDo]);
+        // Clear the form fields after submission
+        setTitle('');
+        setDescription('');
+        setDate('');
+        setTime('');
       };
+
+      console.log(ToDo)
       
-    const [ToDo, setToDo] = useState({})   
+     
 
     return (
         <div className="row justify-content-around">
