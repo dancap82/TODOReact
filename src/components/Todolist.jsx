@@ -1,6 +1,6 @@
-import checkIcon from '../assets/Check.svg'
-import editIcon from '../assets/Edit.svg'
-import deleteIcon from '../assets/Delete.svg'
+import checkIcon from '../components/assets/Check.svg'
+import editIcon from '../components/assets/Edit.svg'
+import deleteIcon from '../components/assets/Delete.svg'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Todolist() {
