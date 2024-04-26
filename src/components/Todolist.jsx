@@ -15,7 +15,6 @@ function Todolist() {
                         <span className="col-md-1">Status</span>
                     </div>
                     <div id="taskFilled" className="row py-4">
-                        <div id='task1'>
                             <div className="border border-dark"></div>
                             <div className="col-md-1 text-start">
                                 <span>12:00</span>
@@ -54,7 +53,6 @@ function Todolist() {
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 
