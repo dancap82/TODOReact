@@ -2,7 +2,11 @@ import './App.css';
 import Form from './components/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TodoList from './components/Todolist.jsx';
+import Navbar from './components/Navbar.jsx';
+import Hero from './components/Hero.jsx';
 import { useState, useEffect } from 'react';
+
+
 
 function App() {
   // Initialize tasks state with tasks from local storage or an empty array
@@ -26,6 +30,8 @@ function App() {
 
   return (
     <div>
+      <Navbar />
+      <Hero />
       <Form tasks={tasks} setTasks={setTasks} />
       <TodoList tasks={tasks} setTasks={setTasks} />
     </div>
