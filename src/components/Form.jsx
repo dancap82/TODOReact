@@ -27,7 +27,6 @@ function Form({ tasks, setTasks }) {
         
         // Generate a unique ID
         const id = Date.now()
-        console.log('Generated ID:', id);
         
         // Create a new task object
         const newTask = {
@@ -42,6 +41,14 @@ function Form({ tasks, setTasks }) {
         setTasks(prevTasks => [...prevTasks, newTask]);
 
         // Clear the form fields after submission
+        setTitle('');
+        setDescription('');
+        setDate('');
+        setTime('');
+    };
+
+    const handleCancel = () => {
+        // Clear the form fields when Cancel button is clicked
         setTitle('');
         setDescription('');
         setDate('');
@@ -75,7 +82,7 @@ function Form({ tasks, setTasks }) {
                         <button id="submit" type="submit" value="submit" className="btn btn-primary px-5" >CREATE</button>
                     </div>
                     <div className="col my-4">
-                        <button id="reset" type="reset" value="Reset" className="btn btn-primary px-5">CANCEL</button>
+                        <button id="reset" type="reset" value="Reset" className="btn btn-primary px-5" onClick={handleCancel}>CANCEL</button>
                     </div>
                 </div>
             </form>

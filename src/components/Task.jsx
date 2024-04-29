@@ -5,7 +5,6 @@ import deleteIcon from '../components/assets/Delete.svg';
 function Task({ id, title, description, isChecked, time, date, tasks, setTasks}) {
     
     const handleDelete = () => {
-        console.log("Delete icon clicked")
         // Filter out the task with the given id
         const updatedTasks = tasks.filter(task => task.id !== id);
         // Update the tasks state with the updatedTasks array
@@ -15,7 +14,6 @@ function Task({ id, title, description, isChecked, time, date, tasks, setTasks})
 
     const handleCheck = () => {
         // Update the isChecked state of the task
-        console.log("Check icon clicked")
         const updatedTasks = tasks.map(task => {
             if (task.id === id) {
                 return { ...task, isChecked: !task.isChecked }; // Toggle isChecked state
@@ -33,7 +31,7 @@ function Task({ id, title, description, isChecked, time, date, tasks, setTasks})
                 <span>{date} - {time}</span>
             </div>
             <div className="col-md-8 text-center">
-                <span style={{ textDecoration: isChecked ? 'line-through' : 'none' }}>{title} - {description} {console.log("isChecked:", isChecked)}</span> {/* Render title or description here */}
+                <span style={{ textDecoration: isChecked ? 'line-through' : 'none' }}>{title} - {description} {console.log("isChecked:", isChecked)}</span>
             </div>
             <div className="col-md-1 text-end">
                 <img
