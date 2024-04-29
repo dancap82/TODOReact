@@ -1,55 +1,52 @@
 import { useState } from "react";
 
-function Form({ToDo, setToDo}) {
-
+function Form({ tasks, setTasks }) {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [date, setDate] = useState(''); 
     const [time, setTime] = useState(''); 
-     
 
     const handleTitleChange = (event) => {
         setTitle(event.target.value);
-      };
+    };
     
     const handleDescriptionChange = (event) => {
         setDescription(event.target.value);
-      };
+    };
     
     const handleDateChange = (event) => {
         setDate(event.target.value);
-      };
+    };
 
     const handleTimeChange = (event) => {
         setTime(event.target.value);
-      };
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // You can use the values stored in states here for further processing
-        console.log('Title:', title);
-        console.log('Description:', description);
-        console.log('Date:', date);
-        console.log('Time:', time);
-        // Here you can perform actions like submitting the form or sending data to a server
-        const newToDo = {
-            id: Date.now(), // Generate a unique ID (for simplicity, using timestamp)
+        
+        // Generate a unique ID
+        const id = Date.now()
+        console.log('Generated ID:', id);
+        
+        // Create a new task object
+        const newTask = {
+            id: id,
             title: title,
             description: description,
             date: date,
             time: time
         };
-        setToDo(prevToDo => [...prevToDo, newToDo]);
+
+        // Update tasks state with the new task
+        setTasks(prevTasks => [...prevTasks, newTask]);
+
         // Clear the form fields after submission
         setTitle('');
         setDescription('');
         setDate('');
         setTime('');
-      };
-
-      console.log(ToDo)
-      
-     
+    };
 
     return (
         <div className="row justify-content-around">

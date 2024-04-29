@@ -1,7 +1,7 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Task from './Task';
 
-function Todolist({ToDo, setToDo}) {
+function Todolist({ tasks, setTasks }) {
     return(
         <div className="container">
             <div className="row">
@@ -12,11 +12,23 @@ function Todolist({ToDo, setToDo}) {
                         <span className="col-md-8">Task</span>
                         <span className="col-md-1">Status</span>
                     </div>
-                    {ToDo.map((task) => <Task task={task}/> )}
+                    {tasks.map((task) => (
+                        <Task
+                            id={task.id}
+                            key={task.id}
+                            title={task.title}
+                            description={task.description}
+                            time={task.time}
+                            date={task.date}
+                            tasks={tasks}
+                            setTasks={setTasks}
+                            isChecked={task.isChecked}
+                        />
+                    ))}
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Todolist;
