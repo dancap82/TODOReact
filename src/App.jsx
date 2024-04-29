@@ -1,14 +1,21 @@
-import { useState } from 'react'
 import './App.css'
+import Form from './components/Form'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import TodoList from './components/Todolist.jsx';
+
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  return(
+    <div>
+        <Form /> 
+        <TodoList />
+              
+    
+    </div>
+  );
 
-  return (
-    <>
-
-    </>
-  )
 }
 
 export default App
